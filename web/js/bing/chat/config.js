@@ -504,7 +504,7 @@ _w['_sydConvTranslation'] = {
   fileUploadFlyoutUploadButtonLabel: '從此設備上傳',
   fileUploadGenericErrorMessage: '抱歉 - 上傳似乎失敗。請重試',
   preview: '預覽',
-  toneSelectorDescription: '.',
+  toneSelectorDescription: '',
   toneSelectorCreative: '有創造力',
   toneSelectorCreativeModifier: '更',
   toneSelectorBalanced: '平衡',
