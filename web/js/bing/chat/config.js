@@ -283,7 +283,7 @@ _w['_sydConvTranslation'] = {
   serpFeedbackFormRadioSlowResponses: '回應緩慢',
   serpFeedbackFormRadioOther: '其他',
   feedbackFormUnderstandDataSharedText: '詳細了解作為診斷數據共享的內容',
-  feedbackFormUserConsentText: '將提示共享到 Copilot、從 Copilot 收到的響應，以及此交互的診斷數據?',
+  feedbackFormUserConsentText: '將提示共享到 Copilot、從 Copilot 收到的回應，以及此交互的診斷數據?',
   feedbackFormUserConsentYesText: '是',
   feedbackFormUserConsentNoText: '否',
   feedbackFormPrivacyStatement: '隱私聲明',
