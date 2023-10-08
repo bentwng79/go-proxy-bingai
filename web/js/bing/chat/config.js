@@ -255,9 +255,9 @@ _w['_sydConvTranslation'] = {
   welcomeMessageItemTitle2: '🎨 獲取改寫建議',
   welcomeMessageItemTitle3: '🧐 生成英語詞彙表',
   welcomeMessageItemLabel4: '更多創意中的新增功能：',
-  warmWelcomeTitle: '🆖 AI English Tutor',
+  warmWelcomeTitle: 'Mr.🆖 AI English Tutor',
   warmWelcomeTitleLine2: '',
-  warmWelcomeAriaLabel: '🆖 AI English Tutor',
+  warmWelcomeAriaLabel: 'Mr.🆖 AI English Tutor',
   welcomeSubtitleText: '由Bing AI驅動的人工智能英語學習利器',
   workToggleDescription: '以及你的結果包括哪些內容',
   feedbackFirstMessage: '非常抱歉沒有幫助到你。是否可以詳細說明你不喜歡的方面?',
@@ -833,7 +833,7 @@ if (UserStoreGet('enterpriseEnable')) {
   _w['_sydConvConfig']['isBingChatForEnterprise'] = true
   _w['_sydConvConfig']['enableMessagePrivacy'] = true
   _w['_sydConvConfig']['PLoadIID'] = 'SERP.5833'
-  _w['_sydConvTranslation']['warmWelcomeTitle'] = '🆖 AI English Tutor'
+  _w['_sydConvTranslation']['warmWelcomeTitle'] = 'Mr.🆖 AI English Tutor'
   _w['_sydConvTranslation']['welcomeSubtitleText'] = '由Bing AI驅動的人工智能英語學習利器'
   _w['_sydConvTranslation']['inputRaiLabel'] = '你的個人和公司數據在此聊天中受到保護'
 }
