@@ -25,21 +25,15 @@ export const usePromptStore = defineStore(
     const promptDownloadConfig = ref<Array<IPromptDownloadConfig>>([
       {
         type: 1,
-        name: 'ChatGPT 中文调教指南 - 简体',
-        url: './data/prompts/prompts-zh.json',
-        refer: 'https://github.com/PlexPt/awesome-chatgpt-prompts-zh',
+        name: 'Prompts Mr. Ng created for students',
+        url: './data/prompts/prompts-from-mr-ng-students.json',
+        refer: 'https://mr5drive.com',
       },
       {
         type: 1,
-        name: 'ChatGPT 中文调教指南 - 繁体',
-        url: './data/prompts/prompts-zh-TW.json',
-        refer: 'https://github.com/PlexPt/awesome-chatgpt-prompts-zh',
-      },
-      {
-        type: 1,
-        name: 'Awesome ChatGPT Prompts',
-        url: './data/prompts/prompts.csv',
-        refer: 'https://github.com/f/awesome-chatgpt-prompts',
+        name: 'Prompts Mr. Ng created for teachers',
+        url: './data/prompts/prompts-from-mr-ng-teachers.json',
+        refer: 'https://mr5drive.com',
       },
       {
         type: 2,
@@ -57,7 +51,7 @@ export const usePromptStore = defineStore(
     const optPromptConfig = ref<{
       isShow: boolean;
       type?: 'add' | 'edit';
-      title?: '添加提示词' | '编辑提示词';
+      title?: '添加提示詞' | '編輯提示詞';
       tmpPrompt?: IPrompt;
       newPrompt: IPrompt;
     }>({
@@ -97,7 +91,7 @@ export const usePromptStore = defineStore(
       } else {
         return {
           result: false,
-          msg: '提示词格式有误',
+          msg: '提示詞格式有誤',
         };
       }
     }
