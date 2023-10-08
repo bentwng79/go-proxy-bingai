@@ -1,0 +1,50 @@
+[
+    {
+        "act": "Random vocabulary test",
+        "prompt": "Help me study vocabulary: write a sentence for me to fill in the blank, and I'll try to pick the correct option. Automatically give me more sentences until I tell you to stop."
+    },
+    {
+        "act": "Academic vocabulary test",
+        "prompt": "Generate at random a 15-item vocabulary list from the Academic Word List, beginning with different letters, with the order of the entries in the list randomized, in the format '**English word** (sublist number) [繁體中文定義] <word class symbol>: example sentence 例句中文翻譯'. Next, generate a 15-item MCQ test for the list above. Finally, provide the correct answers at the end of the test."
+    },
+    {
+        "act": "CEFR vocabulary test",
+        "prompt": "Generate at random a 15-item vocabulary list based on CEFR A1-C2, beginning with different letters, with the order of the entries in the list randomized, in the format '**English word** [繁體中文定義] <word class symbol>: example sentence 例句中文翻譯'. Next, generate a 15-item MCQ test for the list above, and give me the correct answers at the end of the test. Now, start by asking me which CEFR level I need."
+    },
+    {
+        "act": "Oxford 3000 vocabulary test",
+        "prompt": "Generate at random a 15-item vocabulary list from Oxford 3000, beginning with different letters, with the order of the entries in the list randomized, in the format '**English word** [繁體中文定義] <word class symbol>: example sentence 例句中文翻譯'. Next, generate a 15-item MCQ test for the list above, and give me the correct answers at the end of the test."
+    },
+    {
+        "act": "English diagnostic test",
+        "prompt": "Create a diagnostic test for me to evaluate my proficiency in English. The 8 questions should all be MCQs with 4 options each, and should cover different skills and domains of English, such as grammar, vocabulary, spelling, and reading comprehension. Present one question at a time and provide feedback after each question. Adjust the level of difficulty of the questions you ask along the way: If I answer a question correctly, ask me a more difficult question next; On the contrary, if I answer a question incorrectly, make the next question easier for me. At the end of the test, tell me my score and comment on my performance."
+    },
+    {
+        "act": "English grammar lesson",
+        "prompt": "Generate a worksheet to help me learn and practice English grammar. Give me some lesson notes first and then generate 10 MCQs. Provide the correct answers at the end of the worksheet. Now, ask me which grammar topic I want for the worksheet."
+    },
+    {
+        "act": "Writing assistant",
+        "prompt": "I want you to act as a writing improvement assistant. I will provide you with a text that needs improving and your task is to improve its spelling, grammar, clarity, concision, and overall readability, while breaking down long sentences, reducing repetition, and providing suggestions for improvement. Please provide only the corrected English version of the text and avoid including explanations."
+    },
+    {
+        "act": "Grammar checker",
+        "prompt": "Do a grammar check on the text I provide. If the text contains more than one sentence, use a table to highlight the wrong sentences and provide a suggested correction. Otherwise, do not use any table."
+    },
+    {
+        "act": "English polisher",
+        "prompt": "I want you to act as a professional writer and editor. I will provide you with a text and your task is to correct and improve it. Replace any simple words and sentence structures with more advanced and complex ones. Also, perform a style check and suggest changes to improve the clarity, concision, and readability of the text. Additionally, use descriptive adjectives and adverbs to add more detail and interest to the text. Now, please begin by asking me for the text."
+    },
+    {
+        "act": "Writing feedback",
+        "prompt": "I want you to act as an AI writing tutor. I will provide you with a text that needs improving and your task is to use artificial intelligence tools, such as natural language processing, to give feedback on how the text can be improved. You should also use your rhetorical knowledge and experience about effective writing techniques in order to suggest ways that I can better express my thoughts and ideas in written form."
+    },
+    {
+        "act": "Dictionary",
+        "prompt": "請用英漢詞典的格式為單詞提供釋義，包含以下內容： 1.單詞的英式音標與美式音標； 2.簡明的中文釋義、英文釋義與英文釋義的中文翻譯，帶詞性； 3.每項釋義對應一個帶中文翻譯的例句； 4.單詞的詞源詞根與對應的中文翻譯； 5.單詞的近義詞（帶詞性）。以上每項之間都換行。現在，請先問我要查詢那個英文單詞。"
+    },
+    {
+        "act": "English-Chinese translator",
+        "prompt": "我想讓你充當翻譯家，你的目標是把任何語言翻譯成中文，翻譯時不要帶翻譯腔，而是要翻譯得自然、流暢和地道，使用優美和高雅的表達方式。"
+    }
+]
