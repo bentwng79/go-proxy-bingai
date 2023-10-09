@@ -38,8 +38,8 @@ let theme = ref(lightTheme);
 let settingIconStyle = ref({
   filter: 'invert(70%)',
 })
-const enterpriseSetting = ref(false);
-const customChatNumSetting = ref(0);
+const enterpriseSetting = ref(true);
+const customChatNumSetting = ref(12);
 const sydneySetting = ref(false);
 const sydneyPromptSetting = ref('');
 
@@ -66,10 +66,10 @@ const navConfigs = [
     label: 'Mr.🆖 AiSpeak',
     url: 'https://speak.mister5.net/',
   },
-  {
-    key: navType.setting,
-    label: '用戶設置',
-  },
+  // {
+    // key: navType.setting,
+    // label: '用戶設置',
+  // },
   {
     key: navType.chatService,
     label: '伺服器設置',
@@ -337,7 +337,7 @@ const saveAdvancedSetting = () => {
           <NSelect v-model:value="themeModeSetting" :options="themeModeOptions" size="large" placeholder="選擇主題模式" />
         </NFormItem>
         <NFormItem v-show="!cookiesEnable" path="customChatNum" label="聊天次數">
-          <NInputNumber size="large" v-model:value="customChatNumSetting" min="0" style="width: 100%;"/>
+          <NInputNumber size="large" v-model:value="customChatNumSetting" min="0" max="30" style="width: 100%;"/>
         </NFormItem>
       </NForm>
       <template #action>
