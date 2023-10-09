@@ -85,7 +85,7 @@ const initChatService = () => {
     isShowChatServiceSelectModal.value = false;
     isShowPromptSotre.value = false;
   } else {
-    isShowChatServiceSelectModal.value = true;
+    isShowChatServiceSelectModal.value = false;
     selectedSydneyBaseUrl.value = CIB.config.sydney.baseUrl;
     const isCus = sydneyConfigs.value.filter((x) => !x.isCus).every((x) => x.baseUrl !== selectedSydneyBaseUrl.value);
     if (isCus) {
