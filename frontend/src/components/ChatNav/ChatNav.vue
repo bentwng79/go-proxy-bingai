@@ -39,7 +39,7 @@ let settingIconStyle = ref({
   filter: 'invert(70%)',
 })
 const enterpriseSetting = ref(true);
-const customChatNumSetting = ref(12);
+const customChatNumSetting = ref(0);
 const sydneySetting = ref(false);
 const sydneyPromptSetting = ref('');
 
@@ -89,7 +89,7 @@ const navConfigs = [
   // },
   {
     key: navType.advancedSetting,
-    label: '高級設置',
+    label: '進階設置',
   },
   {
     key: navType.reset,
@@ -288,7 +288,7 @@ const saveAdvancedSetting = () => {
     </NDropdown>
     <NModal v-model:show="isShowSettingModal" preset="dialog" :show-icon="false">
       <template #header>
-        <div class="text-3xl py-2">設置</div>
+        <div class="text-3xl py-2">用戶設置</div>
       </template>
       <NForm ref="formRef" label-placement="left" label-width="auto" require-mark-placement="right-hanging" style="margin-top: 16px;">
         <NFormItem path="cookiesEnable" label="完整 Cookie">
@@ -317,7 +317,7 @@ const saveAdvancedSetting = () => {
     </NModal>
     <NModal v-model:show="isShowAdvancedSettingModal" preset="dialog" :show-icon="false">
       <template #header>
-        <div class="text-3xl py-2">高級設置</div>
+        <div class="text-3xl py-2">進階設置</div>
       </template>
       <NForm ref="formRef" label-placement="left" label-width="auto" require-mark-placement="right-hanging"
         style="margin-top: 16px;">
