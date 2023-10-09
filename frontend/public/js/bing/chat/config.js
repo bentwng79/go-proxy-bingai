@@ -231,7 +231,7 @@ _w['_sydConvTranslation'] = {
   messageLearnMore: '了解詳細信息:',
   messageReference: '參考',
   messageReferences: '引用',
-  messagePrivacyLabel: '你的個人和機構數據在此聊天中受到保護',
+  messagePrivacyLabel: 'Mr.🆖 提提你：誠信學習、堅拒抄襲！',
   inputRaiLabel: '',
   letsChat: '我們聊天吧',
   pause: '暫停',
@@ -835,5 +835,5 @@ if (UserStoreGet('enterpriseEnable')) {
   _w['_sydConvConfig']['PLoadIID'] = 'SERP.5833'
   _w['_sydConvTranslation']['warmWelcomeTitle'] = 'Mr.🆖 AI English Tutor'
   _w['_sydConvTranslation']['welcomeSubtitleText'] = '由Bing AI驅動的人工智能英語學習利器'
-  _w['_sydConvTranslation']['inputRaiLabel'] = '你的個人和機構數據在此聊天中受到保護'
+  _w['_sydConvTranslation']['inputRaiLabel'] = 'Mr.🆖 提提你：誠信學習、堅拒抄襲！'
 }
