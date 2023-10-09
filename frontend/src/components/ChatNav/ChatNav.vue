@@ -32,7 +32,7 @@ const localVersion = __APP_INFO__.version;
 const { historyEnable, themeMode, fullCookiesEnable, cookiesStr, enterpriseEnable, customChatNum, sydneyEnable, sydneyPrompt } = storeToRefs(userStore)
 let cookiesEnable = ref(false);
 let cookies = ref('');
-let history = ref(true);
+let history = ref(false);
 let themeModeSetting = ref('auto');
 let theme = ref(lightTheme);
 let settingIconStyle = ref({
@@ -292,7 +292,7 @@ const saveAdvancedSetting = () => {
       </template>
       <NForm ref="formRef" label-placement="left" label-width="auto" require-mark-placement="right-hanging" style="margin-top: 16px;">
         <NFormItem path="cookiesEnable" label="完整 Cookie">
-          <NSwitch v-model:value="cookiesEnable" />
+          <NSwitch v-model:value="cookiesEnable" :disabled="true" />
         </NFormItem>
         <NFormItem v-show="!cookiesEnable" path="token" label="Token">
           <NInput size="large" v-model:value="userToken" type="text" placeholder="需要 _U 的值" />
@@ -322,16 +322,16 @@ const saveAdvancedSetting = () => {
       <NForm ref="formRef" label-placement="left" label-width="auto" require-mark-placement="right-hanging"
         style="margin-top: 16px;">
         <NFormItem path="history" label="歷史記錄">
-          <NSwitch v-model:value="history" />
+          <NSwitch v-model:value="history" :disabled="true" />
         </NFormItem>
         <NFormItem path="enterpriseEnable" label="企業版">
           <NSwitch v-model:value="enterpriseSetting" />
         </NFormItem>
         <NFormItem path="sydneyEnable" label="越獄模式">
-          <NSwitch v-model:value="sydneySetting" />
+          <NSwitch v-model:value="sydneySetting" :disabled="true" />
         </NFormItem>
         <NFormItem path="sydneyPrompt" label="提示詞">
-          <NInput size="large" v-model:value="sydneyPromptSetting" type="text" placeholder="越獄模式提示詞" />
+          <NInput size="large" v-model:value="sydneyPromptSetting" type="text" placeholder="越獄模式提示詞" disabled />
         </NFormItem>
         <NFormItem path="themeMode" label="主題模式">
           <NSelect v-model:value="themeModeSetting" :options="themeModeOptions" size="large" placeholder="選擇主題模式" />
