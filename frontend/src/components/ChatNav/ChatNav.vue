@@ -325,12 +325,12 @@ const saveAdvancedSetting = () => {
           <NSwitch v-model:value="history" :disabled="true" />
         </NFormItem>
         <NFormItem path="enterpriseEnable" label="企業版">
-          <NSwitch v-model:value="enterpriseSetting" />
+          <NSwitch v-model:value="enterpriseSetting" :disabled="true" />
         </NFormItem>
         <NFormItem path="sydneyEnable" label="越獄模式">
           <NSwitch v-model:value="sydneySetting" :disabled="true" />
         </NFormItem>
-        <NFormItem path="sydneyPrompt" label="提示詞">
+        <NFormItem path="sydneyPrompt" label="">
           <NInput size="large" v-model:value="sydneyPromptSetting" type="text" placeholder="越獄模式提示詞" disabled />
         </NFormItem>
         <NFormItem path="themeMode" label="主題模式">
