@@ -330,7 +330,7 @@ const saveAdvancedSetting = () => {
         <NFormItem path="sydneyEnable" label="越獄模式">
           <NSwitch v-model:value="sydneySetting" :disabled="true" />
         </NFormItem>
-        <NFormItem path="sydneyPrompt" label="">
+        <NFormItem path="sydneyPrompt" label="系統提示">
           <NInput size="large" v-model:value="sydneyPromptSetting" type="text" placeholder="越獄模式提示詞" disabled />
         </NFormItem>
         <NFormItem path="themeMode" label="主題模式">
