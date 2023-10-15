@@ -70,10 +70,10 @@ const navConfigs = [
     // key: navType.setting,
     // label: '用戶設置',
   // },
-  {
-    key: navType.chatService,
-    label: '伺服器設置',
-  },
+  // {
+    // key: navType.chatService,
+    // label: '伺服器設置',
+  // },
   {
     key: navType.promptStore,
     label: '提示詞庫',
@@ -347,7 +347,7 @@ const saveAdvancedSetting = () => {
     </NModal>
     <NModal v-model:show="isShowClearCacheModal" preset="dialog" :show-icon="false">
       <template #header>
-        <div class="text-xl py-2">將刪除包括 Cookie 等的所有緩存？</div>
+        <div class="text-xl py-2">刪除包括 Cookie 等的所有緩存？</div>
       </template>
       <template #action>
         <NButton size="large" @click="isShowClearCacheModal = false">取消</NButton>
