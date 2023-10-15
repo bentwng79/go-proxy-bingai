@@ -158,7 +158,7 @@ const hackStyle = () => {
   serpEle?.shadowRoot?.querySelector('cib-serp-feedback')?.remove();
   if (isMobile()) {
     welcomeEle?.shadowRoot?.querySelector('.container-item')?.remove();
-    CIB.vm.actionBar.input.placeholder = '問任何問題...（按 [ / ] 鍵觸發提示詞）';
+    CIB.vm.actionBar.input.placeholder = '輸入問題...（按 [ / ] 鍵打開提示詞）';
   }
   // 加入css
   const conversationStyleEle = document.createElement('style');
