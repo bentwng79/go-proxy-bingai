@@ -207,7 +207,7 @@ _w['_sydThreads'] = {
   threads: [],
 };
 _w['_sydConvTranslation'] = {
-  actionBarPlaceholder: '問任何問題...（按 [ / ] 鍵觸發提示詞）',
+  actionBarPlaceholder: '輸入問題...（按 [ / ] 鍵打開提示詞）',
   actionBarAriaLabel: '詢問必應',
   actionBarComposeButton: '新主題',
   actionBarNewChatButtonDesktop: '開始新聊天',
@@ -320,7 +320,7 @@ _w['_sydConvTranslation'] = {
   actionBarSpeechInputModeButtonAriaLabel: '使用麥克風',
   actionBarVisualSearchButtonTooltip: '新增影像',
   actionBarVisualSearchButtonAriaLabel: '新增要搜尋的影像',
-  actionBarVisualSearchCoachMarkTitle: '帶圖像的 Mr.🆖 AI English Tutor',
+  actionBarVisualSearchCoachMarkTitle: '帶影像的 Mr.🆖 AI English Tutor',
   actionBarVisualSearchCoachMarkDescription: '現在你可以使用影像與 Mr.🆖 AI English Tutor 聊天！',
   actionBarVisualSearchCoachMarkImgAlt: '視覺搜尋工具提示影像',
   actionBarSubmitButtonAriaLabel: '提交',
