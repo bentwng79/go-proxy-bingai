@@ -59,7 +59,7 @@ onMounted(async () => {
   hackSydney();
   initChatPrompt();
 
-  // set Theme
+  // set Themes
   if (themeMode.value == 'light') {
     CIB.changeColorScheme(0);
   } else if (themeMode.value == 'dark') {
