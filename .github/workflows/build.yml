@@ -1,7 +1,7 @@
 name: Build Go-Proxy-BingAI
 on:
   push:
-    branches: [master]
+    branches: [V1.16.3]
   release:
     types: [created] # 表示在创建新的 Release 时触发
 
