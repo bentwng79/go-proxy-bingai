@@ -301,7 +301,7 @@ _w['_sydConvTranslation'] = {
   submit: '提交',
   explore: '瀏覽',
   exploreMore: '瀏覽更多',
-  metaInternalSearchQuery: '正在搜尋: `{0}`',
+  metaInternalSearchQuery: '正在搜尋：`{0}`',
   metaInternalLoaderMessage: '正在為你產生解答...',
   metaInternalImageLoaderMessage: '分析影像: 隱私模糊會隱藏聊天中的人臉',
   compliantMetaInternalLoaderMessage: '從 {0} 產生安全解答',
