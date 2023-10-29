@@ -34,7 +34,7 @@ jobs:
           git config --global user.name "bentwng79"
           git add web/*
           git commit -m "[Upgrade] 🚀 Upload latest webFile"
-          git push origin HEAD:master
+          git push origin HEAD:V1.16.3
 
       - name: Setup timezone
         uses: zcong1993/setup-timezone@master
