@@ -84,12 +84,13 @@ func NewSingleHostReverseProxy(target *url.URL) *httputil.ReverseProxy {
 		req.URL.Host = target.Host
 		req.Host = target.Host
 
-		// originalRefer := req.Referer()
-		// if originalRefer != "" && !strings.Contains(originalRefer, originalDomain) {
-		// 	req.Header.Set("Referer", strings.ReplaceAll(originalRefer, originalDomain, BING_URL.String()))
-		// } else {
-		req.Header.Set("Referer", fmt.Sprintf("%s/search?q=Bing+AI", BING_URL.String()))
-		// }
+		if strings.Contains(req.Referer(), "web/compose.html") {
+			req.Header.Set("Referer", fmt.Sprintf("%s/edgesvc/compose", EDGE_SVC_URL.String()))
+			req.Header.Set("Origin", EDGE_SVC_URL.String())
+		} else {
+			req.Header.Set("Referer", fmt.Sprintf("%s/search?q=Bing+AI", BING_URL.String()))
+			req.Header.Set("Origin", BING_URL.String())
+		}
 
 		// 同一会话尽量保持相同的随机IP
 		ckRandIP, _ := req.Cookie(RAND_IP_COOKIE_NAME)

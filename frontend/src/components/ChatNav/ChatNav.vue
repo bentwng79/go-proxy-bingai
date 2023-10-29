@@ -38,6 +38,7 @@ let theme = ref(lightTheme);
 let settingIconStyle = ref({
   filter: 'invert(70%)',
 })
+let passingCFChallenge = ref(false);
 const enterpriseSetting = ref(true);
 const customChatNumSetting = ref(0);
 const sydneySetting = ref(false);
@@ -200,7 +201,7 @@ const resetCache = async () => {
   isShowClearCacheModal.value = false;
   await userStore.resetCache();
   message.success('清理完成');
-  window.location.href = '/web/';
+  window.location.href = '/';
 };
 
 const saveSetting = () => {
@@ -273,7 +274,31 @@ const saveAdvancedSetting = () => {
   }
   isShowAdvancedSettingModal.value = false;
   if (tmpEnterpris != enterpriseSetting.value || tmpSydney != sydneySetting.value) {
-    window.location.href = '/web/';
+    window.location.href = '/';
+  }
+}
+
+const autoPassCFChallenge = async () => {
+  passingCFChallenge.value = true;
+  let resq = await fetch('/pass', {
+    credentials: 'include',
+    method: "POST", // *GET, POST, PUT, DELETE, etc.
+    mode: "cors", // no-cors, *cors, same-origin
+    headers: {
+      "Content-Type": "application/json",
+    },body: JSON.stringify({
+      "cookies": document.cookie,
+    }),
+  }).then((res) => res.json())
+  if (resq['result'] != null && resq['result'] != undefined) {
+    userStore.saveCookies(resq['result']['cookies']);
+    cookiesStr.value = resq['result']['cookies'];
+    message.success('自动通过人机验证成功');
+    passingCFChallenge.value = false;
+    window.location.href = '/';
+  } else {
+    message.error('请重试');
+    passingCFChallenge.value = false;
   }
 }
 </script>
@@ -291,6 +316,9 @@ const saveAdvancedSetting = () => {
         <div class="text-3xl py-2">用戶設置</div>
       </template>
       <NForm ref="formRef" label-placement="left" label-width="auto" require-mark-placement="right-hanging" style="margin-top: 16px;">
+        <NFormItem path="cookiesEnable" label="自动人机验证">
+          <NButton type="info" :loading="passingCFChallenge" @click="autoPassCFChallenge">启动</NButton>
+        </NFormItem>
         <NFormItem path="cookiesEnable" label="完整 Cookie">
           <NSwitch v-model:value="cookiesEnable" :disabled="true" />
         </NFormItem>
