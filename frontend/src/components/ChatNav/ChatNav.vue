@@ -29,7 +29,7 @@ const { isShowChatServiceSelectModal } = storeToRefs(chatStore);
 const userStore = useUserStore();
 const localVersion = __APP_INFO__.version;
 // const lastVersion = ref('加载中...');
-const { historyEnable, themeMode, fullCookiesEnable, cookiesStr, enterpriseEnable, customChatNum, sydneyEnable, sydneyPrompt } = storeToRefs(userStore)
+const { historyEnable, themeMode, fullCookiesEnable, cookiesStr, enterpriseEnable, customChatNum, sydneyEnable, sydneyPrompt, passServer } = storeToRefs(userStore)
 let cookiesEnable = ref(false);
 let cookies = ref('');
 let history = ref(false);
@@ -43,6 +43,7 @@ const enterpriseSetting = ref(true);
 const customChatNumSetting = ref(0);
 const sydneySetting = ref(false);
 const sydneyPromptSetting = ref('');
+const passServerSetting = ref('');
 
 // const GetLastVersion = async () => {
   // const res = await fetch('https://api.github.com/repos/Harry-zklcdc/go-proxy-bingai/releases/latest');
@@ -67,10 +68,10 @@ const navConfigs = [
     label: 'Mr.🆖 AiSpeak',
     url: 'https://speak.mister5.net/',
   },
-  // {
-    // key: navType.setting,
-    // label: '用戶設置',
-  // },
+  {
+    key: navType.setting,
+    label: '用戶設置',
+  },
   // {
     // key: navType.chatService,
     // label: '伺服器設置',
@@ -172,6 +173,7 @@ const handleSelect = (key: string) => {
         sydneySetting.value = sydneyEnable.value;
         sydneyPromptSetting.value = sydneyPrompt.value;
         isShowAdvancedSettingModal.value = true;
+        passServerSetting.value = passServer.value;
       }
       break;
     case navType.createImage:
@@ -242,6 +244,7 @@ const saveAdvancedSetting = () => {
   const tmpSydney = sydneyEnable.value;
   sydneyEnable.value = sydneySetting.value;
   sydneyPrompt.value = sydneyPromptSetting.value;
+  passServer.value = passServerSetting.value;
   if (history.value) {
     if (userStore.getUserToken()) {
       CIB.vm.sidePanel.isVisibleDesktop = true;
@@ -286,18 +289,23 @@ const autoPassCFChallenge = async () => {
     mode: "cors", // no-cors, *cors, same-origin
     headers: {
       "Content-Type": "application/json",
-    },body: JSON.stringify({
-      "cookies": document.cookie,
+    },
+    body: JSON.stringify({
+      "url": passServer.value,
     }),
   }).then((res) => res.json())
+  .catch(() => {
+    message.error('人機驗證失敗, 請重試');
+    passingCFChallenge.value = false;
+  })
   if (resq['result'] != null && resq['result'] != undefined) {
     userStore.saveCookies(resq['result']['cookies']);
     cookiesStr.value = resq['result']['cookies'];
-    message.success('自动通过人机验证成功');
+    message.success('成功自動通過人機驗證');
     passingCFChallenge.value = false;
     window.location.href = '/';
   } else {
-    message.error('请重试');
+    message.error('人機驗證失敗, 請重試');
     passingCFChallenge.value = false;
   }
 }
@@ -316,8 +324,8 @@ const autoPassCFChallenge = async () => {
         <div class="text-3xl py-2">用戶設置</div>
       </template>
       <NForm ref="formRef" label-placement="left" label-width="auto" require-mark-placement="right-hanging" style="margin-top: 16px;">
-        <NFormItem path="cookiesEnable" label="自动人机验证">
-          <NButton type="info" :loading="passingCFChallenge" @click="autoPassCFChallenge">启动</NButton>
+        <NFormItem path="cookiesEnable" label="自動人機驗證">
+          <NButton type="info" :loading="passingCFChallenge" @click="autoPassCFChallenge">啟動</NButton>
         </NFormItem>
         <NFormItem path="cookiesEnable" label="完整 Cookie">
           <NSwitch v-model:value="cookiesEnable" :disabled="true" />
@@ -357,6 +365,9 @@ const autoPassCFChallenge = async () => {
         </NFormItem>
         <NFormItem path="sydneyEnable" label="越獄模式">
           <NSwitch v-model:value="sydneySetting" :disabled="true" />
+        </NFormItem>
+        <NFormItem path="sydneyPrompt" label="人機驗證">
+          <NInput size="large" v-model:value="passServerSetting" type="text" placeholder="人機驗證伺服器" disabled />
         </NFormItem>
         <NFormItem path="sydneyPrompt" label="系統提示">
           <NInput size="large" v-model:value="sydneyPromptSetting" type="text" placeholder="越獄模式提示詞" disabled />
