@@ -578,7 +578,7 @@ _w['_sydConvTranslation'] = {
   threadsLoad: '加載聊天',
   threadsMinimizeRecent: '最小化最近的聊天',
   threadsMinimizeSaved: '最小化保存的聊天',
-  threadsPreview: '預覽',
+  threadsPreview: '模式',
   threadsPreviewText: '跳回最近聊天',
   threadsRecentTitle: '最近的活動',
   threadsRecentTitleShort: '最近使用',
