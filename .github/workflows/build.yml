@@ -1,7 +1,7 @@
 name: Build Go-Proxy-BingAI
 on:
   push:
-    branches: [V1.16.3]
+    branches: [V1.16.4]
   release:
     types: [created] # 表示在创建新的 Release 时触发
 
@@ -34,7 +34,7 @@ jobs:
           git config --global user.name "bentwng79"
           git add web/*
           git commit -m "[Upgrade] 🚀 Upload latest webFile"
-          git push origin HEAD:V1.16.3
+          git push origin HEAD:V1.16.4
 
       - name: Setup timezone
         uses: zcong1993/setup-timezone@master
