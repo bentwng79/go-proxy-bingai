@@ -68,10 +68,10 @@ const navConfigs = [
     label: 'Mr.🆖 AiSpeak',
     url: 'https://speak.mister5.net/',
   },
-  {
-    key: navType.setting,
-    label: '用戶設置',
-  },
+  // {
+    // key: navType.setting,
+    // label: '用戶設置',
+  // },
   // {
     // key: navType.chatService,
     // label: '伺服器設置',
@@ -89,10 +89,10 @@ const navConfigs = [
     // key: navType.createImage,
     // label: '圖像創建',
   // },
-  {
-    key: navType.advancedSetting,
-    label: '進階設置',
-  },
+  // {
+    // key: navType.advancedSetting,
+    // label: '進階設置',
+  // },
   {
     key: navType.reset,
     label: '一鍵重置',
